@@ -1,0 +1,131 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #ffebf3;
+  color: #d6336c;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background-color: #ff4d6d;
+  margin: 50px auto;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: heartbeat 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 100px;
+  height: 100px;
+  background-color: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -50px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 50px;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+}
+
+.buttons {
+  margin-top: 20px;
+  position: relative; /* Ensure buttons stay on top */
+  z-index: 2; /* Higher z-index than GIFs */
+}
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#yesButton {
+  background-color: #69db7c;
+  color: #fff;
+}
+
+#noButton {
+  background-color: #ff8787;
+  color: #fff;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+#response {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #ff4d6d;
+}
+
+#gifContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* Lower z-index than buttons */
+}
+
+#gifContainer img {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 10px;
+}
+.yes-gif, .no-gif {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 10px;
+}
